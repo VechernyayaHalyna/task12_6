@@ -28,7 +28,7 @@ function getPartsFromFullname($fullName){
 // Функция сокращения фамилии и отбрасывания отчества
 function getShortName($fullName){
     $nameParts = getPartsFromFullname($fullName);
-    return $nameParts['surname']."\x20".mb_substr($nameParts['name'], 0, 1).".";
+    return $nameParts['name']."\x20".mb_substr($nameParts['surname'], 0, 1).".";
 }
 
 // Функция возвращения пола
@@ -88,4 +88,4 @@ function  getPerfectPartner($surname, $name, $middlename, $auditory){
     } while($pairPerson==null);
     echo getShortName($normalisedName).'+'.getShortName($pairPerson['fullname']).'='.'<br>';
     echo "♡ Идеально на ".rand(50,100)."% ♡".'<br>';;
-}
+} 
